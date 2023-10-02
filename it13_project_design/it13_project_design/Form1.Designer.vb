@@ -33,7 +33,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.iconcurrentform = New FontAwesome.Sharp.IconPictureBox()
         Me.paneldata = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_inventory = New System.Windows.Forms.DataGridView()
         Me.panelbottom = New System.Windows.Forms.Panel()
         Me.btnsales = New FontAwesome.Sharp.IconButton()
         Me.btninventory = New FontAwesome.Sharp.IconButton()
@@ -49,7 +49,7 @@ Partial Class Form1
         Me.panelheading.SuspendLayout()
         CType(Me.iconcurrentform, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.paneldata.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelbottom.SuspendLayout()
         Me.paneltexts.SuspendLayout()
         Me.SuspendLayout()
@@ -212,24 +212,24 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.paneldata.BackColor = System.Drawing.Color.SlateBlue
-        Me.paneldata.Controls.Add(Me.DataGridView1)
+        Me.paneldata.Controls.Add(Me.dgv_inventory)
         Me.paneldata.Controls.Add(Me.panelbottom)
         Me.paneldata.Location = New System.Drawing.Point(177, 56)
         Me.paneldata.Name = "paneldata"
         Me.paneldata.Size = New System.Drawing.Size(745, 459)
         Me.paneldata.TabIndex = 3
         '
-        'DataGridView1
+        'dgv_inventory
         '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.dgv_inventory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 9)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.DataGridView1.Size = New System.Drawing.Size(524, 361)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgv_inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_inventory.Location = New System.Drawing.Point(6, 9)
+        Me.dgv_inventory.Name = "dgv_inventory"
+        Me.dgv_inventory.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.dgv_inventory.Size = New System.Drawing.Size(524, 361)
+        Me.dgv_inventory.TabIndex = 0
         '
         'panelbottom
         '
@@ -401,7 +401,8 @@ Partial Class Form1
         Me.Controls.Add(Me.panelmenu)
         Me.MinimumSize = New System.Drawing.Size(938, 554)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Aling NIta's Sari-Sari Store"
         Me.panelmenu.ResumeLayout(False)
         Me.panellogo.ResumeLayout(False)
         Me.panellogo.PerformLayout()
@@ -409,7 +410,7 @@ Partial Class Form1
         Me.panelheading.PerformLayout()
         CType(Me.iconcurrentform, System.ComponentModel.ISupportInitialize).EndInit()
         Me.paneldata.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_inventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelbottom.ResumeLayout(False)
         Me.paneltexts.ResumeLayout(False)
         Me.paneltexts.PerformLayout()
@@ -426,7 +427,7 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents iconcurrentform As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents paneldata As Panel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_inventory As DataGridView
     Friend WithEvents paneltexts As Panel
     Friend WithEvents panellogo As Panel
     Friend WithEvents btnsales As FontAwesome.Sharp.IconButton

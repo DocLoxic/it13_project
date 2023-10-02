@@ -1,8 +1,15 @@
 ﻿Imports FontAwesome.Sharp
+Imports Microsoft.SqlServer.Server
+Imports System.Data.Entity.Core.Common
+Imports System.Data.SqlClient
+Imports System.Data.SQLite
 
 Public Class Form1
     Private currentbtn As IconButton
     Private leftborderbtn As Panel
+    Dim dbConn As New SQLiteConnection
+    Dim dbCMD As SQLiteCommand
+    Dim SQLreader As SQLiteDataReader
     Public Sub New()
         InitializeComponent()
         leftborderbtn = New Panel()
@@ -69,6 +76,14 @@ Public Class Form1
         txtboxunderline(txtboxpcost, Nothing, Nothing, Color.Gainsboro, 2, 1)
         txtboxunderline(txtboxpinstock, Nothing, Nothing, Color.Gainsboro, 2, 1)
         txtboxunderline(txtboxpdisplay, Nothing, Nothing, Color.Gainsboro, 2, 1)
+        dbConn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        dbConn.Open()
+        dbCMD = dbConn.CreateCommand
+        dbCMD.CommandText = "select * from inventory;"
+        Dim dataAdapter As New SQLiteDataAdapter(dbCMD)
+        Dim dt As New DataTable
+        dataAdapter.Fill(dt)
+        dgv_inventory.DataSource = dt
     End Sub
 
     Private Sub txtboxid_Enter(sender As Object, e As EventArgs) Handles txtboxid.Enter

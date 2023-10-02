@@ -23,6 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.panelcartdata = New System.Windows.Forms.Panel()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.btncheckcart = New FontAwesome.Sharp.IconButton()
         Me.btninventory = New FontAwesome.Sharp.IconButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -34,7 +35,6 @@ Partial Class Form2
         Me.txtboxpcost2 = New System.Windows.Forms.TextBox()
         Me.txtboxpname2 = New System.Windows.Forms.TextBox()
         Me.txtboxid2 = New System.Windows.Forms.TextBox()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.panelcartdata.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelcarttext.SuspendLayout()
@@ -54,6 +54,25 @@ Partial Class Form2
         Me.panelcartdata.Name = "panelcartdata"
         Me.panelcartdata.Size = New System.Drawing.Size(575, 496)
         Me.panelcartdata.TabIndex = 4
+        '
+        'IconButton1
+        '
+        Me.IconButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.IconButton1.FlatAppearance.BorderSize = 0
+        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton1.ForeColor = System.Drawing.Color.Gainsboro
+        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.IconButton1.IconColor = System.Drawing.Color.White
+        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton1.Location = New System.Drawing.Point(13, 420)
+        Me.IconButton1.Name = "IconButton1"
+        Me.IconButton1.Padding = New System.Windows.Forms.Padding(5, 0, 20, 0)
+        Me.IconButton1.Size = New System.Drawing.Size(69, 64)
+        Me.IconButton1.TabIndex = 11
+        Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.IconButton1.UseVisualStyleBackColor = True
         '
         'btncheckcart
         '
@@ -231,25 +250,6 @@ Partial Class Form2
         Me.txtboxid2.TabIndex = 0
         Me.txtboxid2.Text = "ID"
         '
-        'IconButton1
-        '
-        Me.IconButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.IconButton1.FlatAppearance.BorderSize = 0
-        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton1.ForeColor = System.Drawing.Color.Gainsboro
-        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
-        Me.IconButton1.IconColor = System.Drawing.Color.White
-        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton1.Location = New System.Drawing.Point(13, 420)
-        Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Padding = New System.Windows.Forms.Padding(5, 0, 20, 0)
-        Me.IconButton1.Size = New System.Drawing.Size(69, 64)
-        Me.IconButton1.TabIndex = 11
-        Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.IconButton1.UseVisualStyleBackColor = True
-        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -258,7 +258,8 @@ Partial Class Form2
         Me.Controls.Add(Me.panelcarttext)
         Me.Controls.Add(Me.panelcartdata)
         Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Cashier"
         Me.panelcartdata.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelcarttext.ResumeLayout(False)
