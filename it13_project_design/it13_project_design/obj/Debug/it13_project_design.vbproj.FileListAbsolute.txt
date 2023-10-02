@@ -1,0 +1,15 @@
+C:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.exe.config
+C:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.exe
+C:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.pdb
+C:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.xml
+C:\it13_project\it13_project_design\it13_project_design\bin\Debug\FontAwesome.Sharp.dll
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.AssemblyReference.cache
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Form1.resources
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Resources.resources
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.GenerateResource.cache
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.CoreCompileInputs.cache
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.CopyComplete
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.exe
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.xml
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.pdb
+C:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Form2.resources
