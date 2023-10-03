@@ -8,6 +8,7 @@ Public Class Form1
     Dim in_transaction As Boolean = False
     Dim where As String = "home"
     Dim trans_id As Integer
+    Dim inOrder As Boolean = False
     Public Sub New()
         InitializeComponent()
         leftborderbtn = New Panel()
@@ -51,6 +52,7 @@ Public Class Form1
     Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
         ActivateButton(sender, RGBColors.color1)
         clear()
+        inOrder = False
         btnsubmit.Show()
         btn_add_to_cart.Hide()
         btn_show_cart.Hide()
@@ -69,6 +71,7 @@ Public Class Form1
     Private Sub btnupdate_Click(sender As Object, e As EventArgs) Handles btnupdate.Click
         ActivateButton(sender, RGBColors.color2)
         clear()
+        inOrder = False
         btnsubmit.Show()
         btn_add_to_cart.Hide()
         btn_show_cart.Hide()
@@ -87,6 +90,7 @@ Public Class Form1
     Private Sub btnlogs_Click(sender As Object, e As EventArgs) Handles btnlogs.Click
         ActivateButton(sender, RGBColors.color4)
         clear()
+        inOrder = False
         btnsubmit.Hide()
         btn_add_to_cart.Hide()
         btn_show_cart.Hide()
@@ -111,6 +115,7 @@ Public Class Form1
     Private Sub btncart_Click(sender As Object, e As EventArgs) Handles btncashier.Click
         clear()
         btnsales.Hide()
+        inOrder = False
         operation = 3
         currpage = 1
         lbl_order_total.Show()
@@ -140,6 +145,7 @@ Public Class Form1
     Private Sub lbltitle_Click(sender As Object, e As EventArgs) Handles lbltitle.Click
         Inventory_View(1)
         clear()
+        inOrder = False
         panelbottom.Show()
         btn_pay.Hide()
         btn_new_trans.Hide()
@@ -160,6 +166,7 @@ Public Class Form1
 
     Private Sub btninventory_Click(sender As Object, e As EventArgs) Handles btninventory.Click
         Inventory_View(1)
+        inOrder = False
         If (in_transaction) Then
             btn_pay.Hide()
             If (where = "cashier") Then
@@ -229,6 +236,7 @@ Public Class Form1
         Orders_View(trans_id)
         txt_order_total.Text = order_total_query(trans_id)
         currpage = 4
+        inOrder = True
         btn_pay.Show()
         lbl_payment.Show()
         txt_payment.Show()
@@ -260,5 +268,24 @@ Public Class Form1
         lbl_quantity.Show()
         txt_quantity.Show()
         in_transaction = False
+        inOrder = False
+    End Sub
+
+    Private Sub dgv_all_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_all.CellDoubleClick
+        If (inOrder) Then
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow
+                row = Me.dgv_all.Rows(e.RowIndex)
+                Dim t_id As Integer
+                Dim p_id As Integer
+                Dim quan As Integer
+                t_id = row.Cells("trans_id").Value
+                p_id = row.Cells("product_id").Value
+                quan = row.Cells("order_quantity").Value
+                delete_order(t_id, p_id, quan)
+                order_total_query(trans_id)
+                txt_order_total.Text = order_total_query(trans_id)
+            End If
+        End If
     End Sub
 End Class

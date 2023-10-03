@@ -190,4 +190,31 @@ Module CRUD_Module
         conn.Close()
         Return currTrans
     End Function
+    Public Sub delete_order(ByVal trans_id As Integer, product_id As Integer, quantity As Integer)
+        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.Open()
+        Dim quantityCheck As SQLiteCommand
+        quantityCheck = conn.CreateCommand
+        quantityCheck.CommandText = "select displayed from inventory where product_id = '" & product_id & "';"
+        SQLreader = quantityCheck.ExecuteReader()
+        Dim disp As Integer
+        While (SQLreader.Read())
+            disp = SQLreader.GetInt64(0)
+        End While
+        cmd = conn.CreateCommand
+        cmd.CommandText = "update inventory set displayed = '" & disp + quantity & "' where product_id = '" & product_id & "';"
+        cmd.ExecuteNonQuery()
+        Dim deleteOrder As SQLiteCommand
+        deleteOrder = conn.CreateCommand
+        deleteOrder.CommandText = "delete from orders where trans_id = '" & trans_id & "' and product_id = '" & product_id & "';"
+        deleteOrder.ExecuteNonQuery()
+        Dim refresh As SQLiteCommand
+        refresh = conn.CreateCommand
+        refresh.CommandText = "select * from orders where trans_id = '" & trans_id & "';"
+        Dim dataAdapter As New SQLiteDataAdapter(refresh)
+        Dim dt As New DataTable
+        dataAdapter.Fill(dt)
+        Form1.dgv_all.DataSource = dt
+        conn.Close()
+    End Sub
 End Module
