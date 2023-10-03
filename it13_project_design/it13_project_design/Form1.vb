@@ -1,15 +1,13 @@
 ﻿Imports FontAwesome.Sharp
-Imports Microsoft.SqlServer.Server
-Imports System.Data.Entity.Core.Common
-Imports System.Data.SqlClient
-Imports System.Data.SQLite
 
 Public Class Form1
     Private currentbtn As IconButton
     Private leftborderbtn As Panel
-    Dim dbConn As New SQLiteConnection
-    Dim dbCMD As SQLiteCommand
-    Dim SQLreader As SQLiteDataReader
+    Dim currpage As Integer = 1
+    Dim operation As Integer
+    Dim in_transaction As Boolean = False
+    Dim where As String = "home"
+    Dim trans_id As Integer
     Public Sub New()
         InitializeComponent()
         leftborderbtn = New Panel()
@@ -52,72 +50,215 @@ Public Class Form1
 
     Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
         ActivateButton(sender, RGBColors.color1)
+        clear()
+        btnsubmit.Show()
+        btn_add_to_cart.Hide()
+        btn_show_cart.Hide()
+        txt_quantity.Hide()
+        btn_pay.Hide()
+        txt_order_total.Hide()
+        lbl_order_total.Hide()
+        lbl_quantity.Hide()
+        operation = 1
+        txtbox_readonly_false(operation)
+        Inventory_View(1)
         panelbottom.Hide()
+        currpage = 1
     End Sub
 
     Private Sub btnupdate_Click(sender As Object, e As EventArgs) Handles btnupdate.Click
         ActivateButton(sender, RGBColors.color2)
+        clear()
+        btnsubmit.Show()
+        btn_add_to_cart.Hide()
+        btn_show_cart.Hide()
+        txt_quantity.Hide()
+        btn_pay.Hide()
+        txt_order_total.Hide()
+        lbl_order_total.Hide()
+        lbl_quantity.Hide()
+        operation = 2
+        txtbox_readonly_false(operation)
+        Inventory_View(1)
         panelbottom.Hide()
-    End Sub
-
-    Private Sub btndelete_Click(sender As Object, e As EventArgs)
-        ActivateButton(sender, RGBColors.color3)
-        panelbottom.Hide()
+        currpage = 1
     End Sub
 
     Private Sub btnlogs_Click(sender As Object, e As EventArgs) Handles btnlogs.Click
         ActivateButton(sender, RGBColors.color4)
+        clear()
+        btnsubmit.Hide()
+        btn_add_to_cart.Hide()
+        btn_show_cart.Hide()
+        txt_quantity.Hide()
+        btn_pay.Hide()
+        txt_order_total.Hide()
+        lbl_order_total.Hide()
+        lbl_quantity.Hide()
+        Logs_View()
         panelbottom.Hide()
+        currpage = 3
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtboxunderline(txtboxid, Nothing, Nothing, Color.Gainsboro, 2, 1)
-        txtboxunderline(txtboxpname, Nothing, Nothing, Color.Gainsboro, 2, 1)
-        txtboxunderline(txtboxpcost, Nothing, Nothing, Color.Gainsboro, 2, 1)
-        txtboxunderline(txtboxpinstock, Nothing, Nothing, Color.Gainsboro, 2, 1)
-        txtboxunderline(txtboxpdisplay, Nothing, Nothing, Color.Gainsboro, 2, 1)
-        dbConn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
-        dbConn.Open()
-        dbCMD = dbConn.CreateCommand
-        dbCMD.CommandText = "select * from inventory;"
-        Dim dataAdapter As New SQLiteDataAdapter(dbCMD)
-        Dim dt As New DataTable
-        dataAdapter.Fill(dt)
-        dgv_inventory.DataSource = dt
-    End Sub
-
-    Private Sub txtboxid_Enter(sender As Object, e As EventArgs) Handles txtboxid.Enter
-        If txtboxid.Text = "ID" Then
-            txtboxid.Text = ""
-        End If
-    End Sub
-
-    Private Sub txtboxpname_Enter(sender As Object, e As EventArgs) Handles txtboxpname.Enter
-        If txtboxpname.Text = "Product Name" Then
-            txtboxpname.Text = ""
-        End If
-    End Sub
-
-    Private Sub txtboxpcost_Enter(sender As Object, e As EventArgs) Handles txtboxpcost.Enter
-        If txtboxpcost.Text = "Product Cost" Then
-            txtboxpcost.Text = ""
-        End If
-    End Sub
-    Private Sub txtboxpdisplay_Enter(sender As Object, e As EventArgs) Handles txtboxpdisplay.Enter
-        If txtboxpdisplay.Text = "Products Displayed" Then
-            txtboxpdisplay.Text = ""
-        End If
-    End Sub
-
-    Private Sub txtboxpinstock_Enter(sender As Object, e As EventArgs) Handles txtboxpinstock.Enter
-        If txtboxpinstock.Text = "Products In Stock" Then
-            txtboxpinstock.Text = ""
-        End If
+        txtbox_readonly_true()
+        clear()
+        btnsubmit.Hide()
+        btn_new_trans.Hide()
+        Inventory_View(1)
     End Sub
 
     Private Sub btncart_Click(sender As Object, e As EventArgs) Handles btncashier.Click
-        Dim secondform As New Form2()
-        secondform.Show()
+        clear()
+        btnsales.Hide()
+        operation = 3
+        currpage = 1
+        lbl_order_total.Show()
+        txt_order_total.Show()
+        txt_quantity.Show()
+        lbl_quantity.Show()
+        If (Not in_transaction) Then
+            txt_quantity.Hide()
+            btnsubmit.Hide()
+            btn_add_to_cart.Hide()
+            btn_pay.Hide()
+            btninventory.Hide()
+            btn_show_cart.Hide()
+            btn_new_trans.Show()
+        Else
+            btn_show_cart.Show()
+            btn_pay.Show()
+            btn_add_to_cart.Show()
+            txt_quantity.ReadOnly = False
+        End If
+        txtbox_readonly_false(operation)
+        Inventory_View(4)
+        panelbottom.Show()
+        where = "cashier"
+    End Sub
 
+    Private Sub lbltitle_Click(sender As Object, e As EventArgs) Handles lbltitle.Click
+        Inventory_View(1)
+        clear()
+        panelbottom.Show()
+        btn_pay.Hide()
+        btn_new_trans.Hide()
+        btn_show_cart.Hide()
+        btninventory.Show()
+        btn_add_to_cart.Hide()
+        btnsales.Show()
+        txtbox_readonly_true()
+        btnsubmit.Hide()
+        where = "home"
+    End Sub
+
+    Private Sub btnsales_Click(sender As Object, e As EventArgs) Handles btnsales.Click
+        Sales_View()
+        clear()
+        currpage = 2
+    End Sub
+
+    Private Sub btninventory_Click(sender As Object, e As EventArgs) Handles btninventory.Click
+        Inventory_View(1)
+        If (in_transaction) Then
+            btn_pay.Hide()
+            If (where = "cashier") Then
+                btn_add_to_cart.Show()
+                lbl_payment.Hide()
+                txt_payment.Hide()
+                lbl_quantity.Show()
+                txt_quantity.Show()
+                lbl_order_total.Show()
+                txt_order_total.Show()
+                txt_order_total.Clear()
+            End If
+        End If
+        clear()
+        currpage = 1
+    End Sub
+
+    Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
+        add_update_query(operation, txtboxid.Text, txtboxpname.Text, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text)
+        clear()
+    End Sub
+
+    Private Sub dgv_all_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_all.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = Me.dgv_all.Rows(e.RowIndex)
+            Select Case currpage
+                Case 1
+                    txtboxid.Text = row.Cells("product_id").Value.ToString
+                    txtboxpname.Text = row.Cells("product_name").Value.ToString
+                    txtboxpcost.Text = row.Cells("product_price").Value.ToString
+                    txtboxpinstock.Text = row.Cells("in_stock").Value.ToString
+                    txtboxpdisplay.Text = row.Cells("displayed").Value.ToString
+                Case 2
+                    id_sales.Text = row.Cells("sales_id").Value.ToString
+                    total_sales.Text = row.Cells("sales_total").Value.ToString
+                    sales_date.Text = row.Cells("sales_date").Value.ToString
+                    trans_id_sales.Text = row.Cells("trans_id").Value.ToString
+                Case 3
+                    log_id.Text = row.Cells("log_id").Value.ToString
+                    log_type.Text = row.Cells("log_type").Value.ToString
+                    log_date.Text = row.Cells("log_date").Value.ToString
+                    product_id_logs.Text = row.Cells("product_id").Value.ToString
+                Case Else
+
+            End Select
+        End If
+    End Sub
+
+    Private Sub btn_new_trans_Click(sender As Object, e As EventArgs) Handles btn_new_trans.Click
+        btninventory.Show()
+        btnsubmit.Hide()
+        btn_new_trans.Hide()
+        btn_add_to_cart.Show()
+        btn_pay.Hide()
+        btn_show_cart.Show()
+        txt_quantity.Show()
+        txt_order_total.Show()
+        lbl_order_total.Show()
+        lbl_quantity.Show()
+        trans_id = add_trans_query()
+        txt_quantity.ReadOnly = False
+        in_transaction = True
+    End Sub
+
+    Private Sub btn_show_cart_Click(sender As Object, e As EventArgs) Handles btn_show_cart.Click
+        Orders_View(trans_id)
+        txt_order_total.Text = order_total_query(trans_id)
+        currpage = 4
+        btn_pay.Show()
+        lbl_payment.Show()
+        txt_payment.Show()
+        lbl_quantity.Hide()
+        txt_quantity.Hide()
+        lbl_order_total.Show()
+        txt_order_total.Show()
+        btn_add_to_cart.Hide()
+        clear()
+    End Sub
+
+    Private Sub btn_add_to_cart_Click(sender As Object, e As EventArgs) Handles btn_add_to_cart.Click
+        add_order_query(txtboxid.Text, trans_id, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text, txt_quantity.Text)
+        clear()
+        txt_order_total.Text = order_total_query(trans_id)
+    End Sub
+
+    Private Sub btn_pay_Click(sender As Object, e As EventArgs) Handles btn_pay.Click
+        commit_order(trans_id, txt_order_total.Text, txt_payment.Text)
+        clear()
+        txt_order_total.Clear()
+        trans_id = 0
+        btninventory.Hide()
+        btn_show_cart.Hide()
+        btn_new_trans.Show()
+        btn_pay.Hide()
+        lbl_payment.Hide()
+        txt_payment.Hide()
+        lbl_quantity.Show()
+        txt_quantity.Show()
+        in_transaction = False
     End Sub
 End Class

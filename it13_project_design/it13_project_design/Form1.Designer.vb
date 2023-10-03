@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.panelmenu = New System.Windows.Forms.Panel()
         Me.panellogo = New System.Windows.Forms.Panel()
@@ -33,23 +33,53 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.iconcurrentform = New FontAwesome.Sharp.IconPictureBox()
         Me.paneldata = New System.Windows.Forms.Panel()
-        Me.dgv_inventory = New System.Windows.Forms.DataGridView()
+        Me.dgv_all = New System.Windows.Forms.DataGridView()
         Me.panelbottom = New System.Windows.Forms.Panel()
+        Me.btn_new_trans = New FontAwesome.Sharp.IconButton()
+        Me.btn_show_cart = New FontAwesome.Sharp.IconButton()
         Me.btnsales = New FontAwesome.Sharp.IconButton()
         Me.btninventory = New FontAwesome.Sharp.IconButton()
         Me.paneltexts = New System.Windows.Forms.Panel()
+        Me.lbl_order_total = New System.Windows.Forms.Label()
+        Me.txt_order_total = New System.Windows.Forms.TextBox()
+        Me.lbl_quantity = New System.Windows.Forms.Label()
+        Me.txt_quantity = New System.Windows.Forms.TextBox()
+        Me.btn_add_to_cart = New FontAwesome.Sharp.IconButton()
+        Me.product_id_logs = New System.Windows.Forms.TextBox()
+        Me.log_date = New System.Windows.Forms.TextBox()
+        Me.log_type = New System.Windows.Forms.TextBox()
+        Me.log_id = New System.Windows.Forms.TextBox()
+        Me.lbl_product_id = New System.Windows.Forms.Label()
+        Me.lbl_log_date = New System.Windows.Forms.Label()
+        Me.lbl_log_type = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.trans_id_sales = New System.Windows.Forms.TextBox()
+        Me.sales_date = New System.Windows.Forms.TextBox()
+        Me.total_sales = New System.Windows.Forms.TextBox()
+        Me.id_sales = New System.Windows.Forms.TextBox()
+        Me.lbl_trans_id = New System.Windows.Forms.Label()
+        Me.lbl_sales_date = New System.Windows.Forms.Label()
+        Me.lbl_total_sales = New System.Windows.Forms.Label()
+        Me.lbl_id = New System.Windows.Forms.Label()
+        Me.lbl_displayed = New System.Windows.Forms.Label()
+        Me.lbl_in_stock = New System.Windows.Forms.Label()
+        Me.lbl_product_cost = New System.Windows.Forms.Label()
+        Me.lbl_product_name = New System.Windows.Forms.Label()
         Me.btnsubmit = New FontAwesome.Sharp.IconButton()
         Me.txtboxpdisplay = New System.Windows.Forms.TextBox()
         Me.txtboxpinstock = New System.Windows.Forms.TextBox()
         Me.txtboxpcost = New System.Windows.Forms.TextBox()
         Me.txtboxpname = New System.Windows.Forms.TextBox()
         Me.txtboxid = New System.Windows.Forms.TextBox()
+        Me.btn_pay = New FontAwesome.Sharp.IconButton()
+        Me.lbl_payment = New System.Windows.Forms.Label()
+        Me.txt_payment = New System.Windows.Forms.TextBox()
         Me.panelmenu.SuspendLayout()
         Me.panellogo.SuspendLayout()
         Me.panelheading.SuspendLayout()
         CType(Me.iconcurrentform, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.paneldata.SuspendLayout()
-        CType(Me.dgv_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_all, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelbottom.SuspendLayout()
         Me.paneltexts.SuspendLayout()
         Me.SuspendLayout()
@@ -212,35 +242,76 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.paneldata.BackColor = System.Drawing.Color.SlateBlue
-        Me.paneldata.Controls.Add(Me.dgv_inventory)
+        Me.paneldata.Controls.Add(Me.dgv_all)
         Me.paneldata.Controls.Add(Me.panelbottom)
         Me.paneldata.Location = New System.Drawing.Point(177, 56)
         Me.paneldata.Name = "paneldata"
         Me.paneldata.Size = New System.Drawing.Size(745, 459)
         Me.paneldata.TabIndex = 3
         '
-        'dgv_inventory
+        'dgv_all
         '
-        Me.dgv_inventory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.dgv_all.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgv_inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_inventory.Location = New System.Drawing.Point(6, 9)
-        Me.dgv_inventory.Name = "dgv_inventory"
-        Me.dgv_inventory.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.dgv_inventory.Size = New System.Drawing.Size(524, 361)
-        Me.dgv_inventory.TabIndex = 0
+        Me.dgv_all.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_all.Location = New System.Drawing.Point(6, 9)
+        Me.dgv_all.Name = "dgv_all"
+        Me.dgv_all.Size = New System.Drawing.Size(524, 361)
+        Me.dgv_all.TabIndex = 0
         '
         'panelbottom
         '
         Me.panelbottom.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.panelbottom.BackColor = System.Drawing.Color.SlateBlue
+        Me.panelbottom.Controls.Add(Me.btn_new_trans)
+        Me.panelbottom.Controls.Add(Me.btn_show_cart)
         Me.panelbottom.Controls.Add(Me.btnsales)
         Me.panelbottom.Controls.Add(Me.btninventory)
         Me.panelbottom.Location = New System.Drawing.Point(6, 362)
         Me.panelbottom.Name = "panelbottom"
         Me.panelbottom.Size = New System.Drawing.Size(524, 97)
         Me.panelbottom.TabIndex = 11
+        '
+        'btn_new_trans
+        '
+        Me.btn_new_trans.FlatAppearance.BorderSize = 0
+        Me.btn_new_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_new_trans.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_new_trans.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btn_new_trans.IconChar = FontAwesome.Sharp.IconChar.PlusSquare
+        Me.btn_new_trans.IconColor = System.Drawing.Color.White
+        Me.btn_new_trans.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_new_trans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_new_trans.Location = New System.Drawing.Point(130, 20)
+        Me.btn_new_trans.Name = "btn_new_trans"
+        Me.btn_new_trans.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_new_trans.Size = New System.Drawing.Size(260, 66)
+        Me.btn_new_trans.TabIndex = 9
+        Me.btn_new_trans.Text = "NEW TRANSACTION"
+        Me.btn_new_trans.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_new_trans.UseVisualStyleBackColor = True
+        '
+        'btn_show_cart
+        '
+        Me.btn_show_cart.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_show_cart.FlatAppearance.BorderSize = 0
+        Me.btn_show_cart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_show_cart.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_show_cart.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btn_show_cart.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart
+        Me.btn_show_cart.IconColor = System.Drawing.Color.White
+        Me.btn_show_cart.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_show_cart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_show_cart.Location = New System.Drawing.Point(289, 21)
+        Me.btn_show_cart.Name = "btn_show_cart"
+        Me.btn_show_cart.Padding = New System.Windows.Forms.Padding(5, 0, 20, 0)
+        Me.btn_show_cart.Size = New System.Drawing.Size(177, 66)
+        Me.btn_show_cart.TabIndex = 33
+        Me.btn_show_cart.Text = "ORDERS"
+        Me.btn_show_cart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_show_cart.UseVisualStyleBackColor = True
+        Me.btn_show_cart.Visible = False
         '
         'btnsales
         '
@@ -285,6 +356,34 @@ Partial Class Form1
         'paneltexts
         '
         Me.paneltexts.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.paneltexts.Controls.Add(Me.lbl_payment)
+        Me.paneltexts.Controls.Add(Me.txt_payment)
+        Me.paneltexts.Controls.Add(Me.btn_pay)
+        Me.paneltexts.Controls.Add(Me.lbl_order_total)
+        Me.paneltexts.Controls.Add(Me.txt_order_total)
+        Me.paneltexts.Controls.Add(Me.lbl_quantity)
+        Me.paneltexts.Controls.Add(Me.txt_quantity)
+        Me.paneltexts.Controls.Add(Me.btn_add_to_cart)
+        Me.paneltexts.Controls.Add(Me.product_id_logs)
+        Me.paneltexts.Controls.Add(Me.log_date)
+        Me.paneltexts.Controls.Add(Me.log_type)
+        Me.paneltexts.Controls.Add(Me.log_id)
+        Me.paneltexts.Controls.Add(Me.lbl_product_id)
+        Me.paneltexts.Controls.Add(Me.lbl_log_date)
+        Me.paneltexts.Controls.Add(Me.lbl_log_type)
+        Me.paneltexts.Controls.Add(Me.Label5)
+        Me.paneltexts.Controls.Add(Me.trans_id_sales)
+        Me.paneltexts.Controls.Add(Me.sales_date)
+        Me.paneltexts.Controls.Add(Me.total_sales)
+        Me.paneltexts.Controls.Add(Me.id_sales)
+        Me.paneltexts.Controls.Add(Me.lbl_trans_id)
+        Me.paneltexts.Controls.Add(Me.lbl_sales_date)
+        Me.paneltexts.Controls.Add(Me.lbl_total_sales)
+        Me.paneltexts.Controls.Add(Me.lbl_id)
+        Me.paneltexts.Controls.Add(Me.lbl_displayed)
+        Me.paneltexts.Controls.Add(Me.lbl_in_stock)
+        Me.paneltexts.Controls.Add(Me.lbl_product_cost)
+        Me.paneltexts.Controls.Add(Me.lbl_product_name)
         Me.paneltexts.Controls.Add(Me.btnsubmit)
         Me.paneltexts.Controls.Add(Me.txtboxpdisplay)
         Me.paneltexts.Controls.Add(Me.txtboxpinstock)
@@ -297,6 +396,325 @@ Partial Class Form1
         Me.paneltexts.Name = "paneltexts"
         Me.paneltexts.Size = New System.Drawing.Size(206, 515)
         Me.paneltexts.TabIndex = 4
+        '
+        'lbl_order_total
+        '
+        Me.lbl_order_total.AutoSize = True
+        Me.lbl_order_total.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_order_total.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_order_total.Location = New System.Drawing.Point(3, 378)
+        Me.lbl_order_total.Name = "lbl_order_total"
+        Me.lbl_order_total.Size = New System.Drawing.Size(93, 19)
+        Me.lbl_order_total.TabIndex = 36
+        Me.lbl_order_total.Text = "Order Total"
+        Me.lbl_order_total.Visible = False
+        '
+        'txt_order_total
+        '
+        Me.txt_order_total.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_order_total.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.txt_order_total.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_order_total.ForeColor = System.Drawing.Color.Gainsboro
+        Me.txt_order_total.Location = New System.Drawing.Point(3, 400)
+        Me.txt_order_total.Name = "txt_order_total"
+        Me.txt_order_total.ReadOnly = True
+        Me.txt_order_total.Size = New System.Drawing.Size(200, 26)
+        Me.txt_order_total.TabIndex = 35
+        Me.txt_order_total.Visible = False
+        '
+        'lbl_quantity
+        '
+        Me.lbl_quantity.AutoSize = True
+        Me.lbl_quantity.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_quantity.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_quantity.Location = New System.Drawing.Point(3, 318)
+        Me.lbl_quantity.Name = "lbl_quantity"
+        Me.lbl_quantity.Size = New System.Drawing.Size(73, 19)
+        Me.lbl_quantity.TabIndex = 34
+        Me.lbl_quantity.Text = "Quantity"
+        Me.lbl_quantity.Visible = False
+        '
+        'txt_quantity
+        '
+        Me.txt_quantity.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_quantity.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.txt_quantity.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_quantity.ForeColor = System.Drawing.Color.Gainsboro
+        Me.txt_quantity.Location = New System.Drawing.Point(3, 340)
+        Me.txt_quantity.Name = "txt_quantity"
+        Me.txt_quantity.ReadOnly = True
+        Me.txt_quantity.Size = New System.Drawing.Size(200, 26)
+        Me.txt_quantity.TabIndex = 33
+        Me.txt_quantity.Visible = False
+        '
+        'btn_add_to_cart
+        '
+        Me.btn_add_to_cart.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_add_to_cart.FlatAppearance.BorderSize = 0
+        Me.btn_add_to_cart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_add_to_cart.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_add_to_cart.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btn_add_to_cart.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart
+        Me.btn_add_to_cart.IconColor = System.Drawing.Color.White
+        Me.btn_add_to_cart.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_add_to_cart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_add_to_cart.Location = New System.Drawing.Point(17, 437)
+        Me.btn_add_to_cart.Name = "btn_add_to_cart"
+        Me.btn_add_to_cart.Padding = New System.Windows.Forms.Padding(5, 0, 20, 0)
+        Me.btn_add_to_cart.Size = New System.Drawing.Size(177, 66)
+        Me.btn_add_to_cart.TabIndex = 32
+        Me.btn_add_to_cart.Text = "ADD TO CART"
+        Me.btn_add_to_cart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_add_to_cart.UseVisualStyleBackColor = True
+        Me.btn_add_to_cart.Visible = False
+        '
+        'product_id_logs
+        '
+        Me.product_id_logs.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.product_id_logs.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.product_id_logs.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.product_id_logs.ForeColor = System.Drawing.Color.Gainsboro
+        Me.product_id_logs.Location = New System.Drawing.Point(3, 216)
+        Me.product_id_logs.Name = "product_id_logs"
+        Me.product_id_logs.ReadOnly = True
+        Me.product_id_logs.Size = New System.Drawing.Size(200, 26)
+        Me.product_id_logs.TabIndex = 31
+        '
+        'log_date
+        '
+        Me.log_date.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.log_date.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.log_date.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.log_date.ForeColor = System.Drawing.Color.Gainsboro
+        Me.log_date.Location = New System.Drawing.Point(3, 154)
+        Me.log_date.Name = "log_date"
+        Me.log_date.ReadOnly = True
+        Me.log_date.Size = New System.Drawing.Size(200, 26)
+        Me.log_date.TabIndex = 30
+        '
+        'log_type
+        '
+        Me.log_type.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.log_type.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.log_type.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.log_type.ForeColor = System.Drawing.Color.Gainsboro
+        Me.log_type.Location = New System.Drawing.Point(3, 95)
+        Me.log_type.Name = "log_type"
+        Me.log_type.ReadOnly = True
+        Me.log_type.Size = New System.Drawing.Size(200, 26)
+        Me.log_type.TabIndex = 29
+        '
+        'log_id
+        '
+        Me.log_id.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.log_id.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.log_id.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.log_id.ForeColor = System.Drawing.Color.Gainsboro
+        Me.log_id.Location = New System.Drawing.Point(3, 35)
+        Me.log_id.Name = "log_id"
+        Me.log_id.ReadOnly = True
+        Me.log_id.Size = New System.Drawing.Size(200, 26)
+        Me.log_id.TabIndex = 28
+        '
+        'lbl_product_id
+        '
+        Me.lbl_product_id.AutoSize = True
+        Me.lbl_product_id.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_product_id.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_product_id.Location = New System.Drawing.Point(3, 194)
+        Me.lbl_product_id.Name = "lbl_product_id"
+        Me.lbl_product_id.Size = New System.Drawing.Size(90, 19)
+        Me.lbl_product_id.TabIndex = 27
+        Me.lbl_product_id.Text = "Product ID"
+        '
+        'lbl_log_date
+        '
+        Me.lbl_log_date.AutoSize = True
+        Me.lbl_log_date.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_log_date.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_log_date.Location = New System.Drawing.Point(3, 132)
+        Me.lbl_log_date.Name = "lbl_log_date"
+        Me.lbl_log_date.Size = New System.Drawing.Size(78, 19)
+        Me.lbl_log_date.TabIndex = 26
+        Me.lbl_log_date.Text = "Log Date"
+        '
+        'lbl_log_type
+        '
+        Me.lbl_log_type.AutoSize = True
+        Me.lbl_log_type.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_log_type.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_log_type.Location = New System.Drawing.Point(3, 73)
+        Me.lbl_log_type.Name = "lbl_log_type"
+        Me.lbl_log_type.Size = New System.Drawing.Size(80, 19)
+        Me.lbl_log_type.TabIndex = 25
+        Me.lbl_log_type.Text = "Log Type"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Label5.Location = New System.Drawing.Point(3, 13)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(25, 19)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "ID"
+        '
+        'trans_id_sales
+        '
+        Me.trans_id_sales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.trans_id_sales.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.trans_id_sales.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.trans_id_sales.ForeColor = System.Drawing.Color.Gainsboro
+        Me.trans_id_sales.Location = New System.Drawing.Point(3, 216)
+        Me.trans_id_sales.Name = "trans_id_sales"
+        Me.trans_id_sales.ReadOnly = True
+        Me.trans_id_sales.Size = New System.Drawing.Size(200, 26)
+        Me.trans_id_sales.TabIndex = 23
+        '
+        'sales_date
+        '
+        Me.sales_date.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.sales_date.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.sales_date.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sales_date.ForeColor = System.Drawing.Color.Gainsboro
+        Me.sales_date.Location = New System.Drawing.Point(3, 154)
+        Me.sales_date.Name = "sales_date"
+        Me.sales_date.ReadOnly = True
+        Me.sales_date.Size = New System.Drawing.Size(200, 26)
+        Me.sales_date.TabIndex = 22
+        '
+        'total_sales
+        '
+        Me.total_sales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_sales.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.total_sales.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_sales.ForeColor = System.Drawing.Color.Gainsboro
+        Me.total_sales.Location = New System.Drawing.Point(3, 95)
+        Me.total_sales.Name = "total_sales"
+        Me.total_sales.ReadOnly = True
+        Me.total_sales.Size = New System.Drawing.Size(200, 26)
+        Me.total_sales.TabIndex = 21
+        '
+        'id_sales
+        '
+        Me.id_sales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.id_sales.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.id_sales.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.id_sales.ForeColor = System.Drawing.Color.Gainsboro
+        Me.id_sales.Location = New System.Drawing.Point(3, 35)
+        Me.id_sales.Name = "id_sales"
+        Me.id_sales.ReadOnly = True
+        Me.id_sales.Size = New System.Drawing.Size(200, 26)
+        Me.id_sales.TabIndex = 20
+        '
+        'lbl_trans_id
+        '
+        Me.lbl_trans_id.AutoSize = True
+        Me.lbl_trans_id.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_trans_id.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_trans_id.Location = New System.Drawing.Point(3, 194)
+        Me.lbl_trans_id.Name = "lbl_trans_id"
+        Me.lbl_trans_id.Size = New System.Drawing.Size(119, 19)
+        Me.lbl_trans_id.TabIndex = 19
+        Me.lbl_trans_id.Text = "Transaction ID"
+        '
+        'lbl_sales_date
+        '
+        Me.lbl_sales_date.AutoSize = True
+        Me.lbl_sales_date.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_sales_date.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_sales_date.Location = New System.Drawing.Point(3, 132)
+        Me.lbl_sales_date.Name = "lbl_sales_date"
+        Me.lbl_sales_date.Size = New System.Drawing.Size(90, 19)
+        Me.lbl_sales_date.TabIndex = 18
+        Me.lbl_sales_date.Text = "Sales Date"
+        '
+        'lbl_total_sales
+        '
+        Me.lbl_total_sales.AutoSize = True
+        Me.lbl_total_sales.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_total_sales.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_total_sales.Location = New System.Drawing.Point(3, 73)
+        Me.lbl_total_sales.Name = "lbl_total_sales"
+        Me.lbl_total_sales.Size = New System.Drawing.Size(92, 19)
+        Me.lbl_total_sales.TabIndex = 17
+        Me.lbl_total_sales.Text = "Total Sales"
+        '
+        'lbl_id
+        '
+        Me.lbl_id.AutoSize = True
+        Me.lbl_id.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_id.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_id.Location = New System.Drawing.Point(3, 13)
+        Me.lbl_id.Name = "lbl_id"
+        Me.lbl_id.Size = New System.Drawing.Size(25, 19)
+        Me.lbl_id.TabIndex = 16
+        Me.lbl_id.Text = "ID"
+        '
+        'lbl_displayed
+        '
+        Me.lbl_displayed.AutoSize = True
+        Me.lbl_displayed.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_displayed.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_displayed.Location = New System.Drawing.Point(3, 254)
+        Me.lbl_displayed.Name = "lbl_displayed"
+        Me.lbl_displayed.Size = New System.Drawing.Size(85, 19)
+        Me.lbl_displayed.TabIndex = 15
+        Me.lbl_displayed.Text = "Displayed"
+        '
+        'lbl_in_stock
+        '
+        Me.lbl_in_stock.AutoSize = True
+        Me.lbl_in_stock.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_in_stock.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_in_stock.Location = New System.Drawing.Point(3, 192)
+        Me.lbl_in_stock.Name = "lbl_in_stock"
+        Me.lbl_in_stock.Size = New System.Drawing.Size(71, 19)
+        Me.lbl_in_stock.TabIndex = 14
+        Me.lbl_in_stock.Text = "In Stock"
+        '
+        'lbl_product_cost
+        '
+        Me.lbl_product_cost.AutoSize = True
+        Me.lbl_product_cost.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_product_cost.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_product_cost.Location = New System.Drawing.Point(3, 132)
+        Me.lbl_product_cost.Name = "lbl_product_cost"
+        Me.lbl_product_cost.Size = New System.Drawing.Size(110, 19)
+        Me.lbl_product_cost.TabIndex = 13
+        Me.lbl_product_cost.Text = "Product Cost"
+        '
+        'lbl_product_name
+        '
+        Me.lbl_product_name.AutoSize = True
+        Me.lbl_product_name.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_product_name.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_product_name.Location = New System.Drawing.Point(3, 73)
+        Me.lbl_product_name.Name = "lbl_product_name"
+        Me.lbl_product_name.Size = New System.Drawing.Size(118, 19)
+        Me.lbl_product_name.TabIndex = 12
+        Me.lbl_product_name.Text = "Product Name"
         '
         'btnsubmit
         '
@@ -311,7 +729,7 @@ Partial Class Form1
         Me.btnsubmit.IconColor = System.Drawing.Color.White
         Me.btnsubmit.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnsubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnsubmit.Location = New System.Drawing.Point(17, 418)
+        Me.btnsubmit.Location = New System.Drawing.Point(17, 437)
         Me.btnsubmit.Name = "btnsubmit"
         Me.btnsubmit.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnsubmit.Size = New System.Drawing.Size(177, 66)
@@ -328,11 +746,10 @@ Partial Class Form1
         Me.txtboxpdisplay.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.txtboxpdisplay.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtboxpdisplay.ForeColor = System.Drawing.Color.Gainsboro
-        Me.txtboxpdisplay.Location = New System.Drawing.Point(3, 344)
+        Me.txtboxpdisplay.Location = New System.Drawing.Point(3, 276)
         Me.txtboxpdisplay.Name = "txtboxpdisplay"
         Me.txtboxpdisplay.Size = New System.Drawing.Size(200, 26)
         Me.txtboxpdisplay.TabIndex = 4
-        Me.txtboxpdisplay.Text = "Products Displayed"
         '
         'txtboxpinstock
         '
@@ -342,11 +759,11 @@ Partial Class Form1
         Me.txtboxpinstock.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.txtboxpinstock.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtboxpinstock.ForeColor = System.Drawing.Color.Gainsboro
-        Me.txtboxpinstock.Location = New System.Drawing.Point(3, 278)
+        Me.txtboxpinstock.Location = New System.Drawing.Point(3, 216)
         Me.txtboxpinstock.Name = "txtboxpinstock"
+        Me.txtboxpinstock.ReadOnly = True
         Me.txtboxpinstock.Size = New System.Drawing.Size(200, 26)
         Me.txtboxpinstock.TabIndex = 3
-        Me.txtboxpinstock.Text = "Products In Stock"
         '
         'txtboxpcost
         '
@@ -356,11 +773,11 @@ Partial Class Form1
         Me.txtboxpcost.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.txtboxpcost.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtboxpcost.ForeColor = System.Drawing.Color.Gainsboro
-        Me.txtboxpcost.Location = New System.Drawing.Point(3, 216)
+        Me.txtboxpcost.Location = New System.Drawing.Point(3, 154)
         Me.txtboxpcost.Name = "txtboxpcost"
+        Me.txtboxpcost.ReadOnly = True
         Me.txtboxpcost.Size = New System.Drawing.Size(200, 26)
         Me.txtboxpcost.TabIndex = 2
-        Me.txtboxpcost.Text = "Product Cost"
         '
         'txtboxpname
         '
@@ -370,11 +787,11 @@ Partial Class Form1
         Me.txtboxpname.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.txtboxpname.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtboxpname.ForeColor = System.Drawing.Color.Gainsboro
-        Me.txtboxpname.Location = New System.Drawing.Point(3, 157)
+        Me.txtboxpname.Location = New System.Drawing.Point(3, 95)
         Me.txtboxpname.Name = "txtboxpname"
+        Me.txtboxpname.ReadOnly = True
         Me.txtboxpname.Size = New System.Drawing.Size(200, 26)
         Me.txtboxpname.TabIndex = 1
-        Me.txtboxpname.Text = "Product Name"
         '
         'txtboxid
         '
@@ -384,11 +801,58 @@ Partial Class Form1
         Me.txtboxid.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.txtboxid.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtboxid.ForeColor = System.Drawing.Color.Gainsboro
-        Me.txtboxid.Location = New System.Drawing.Point(3, 97)
+        Me.txtboxid.Location = New System.Drawing.Point(3, 35)
         Me.txtboxid.Name = "txtboxid"
+        Me.txtboxid.ReadOnly = True
         Me.txtboxid.Size = New System.Drawing.Size(200, 26)
         Me.txtboxid.TabIndex = 0
-        Me.txtboxid.Text = "ID"
+        '
+        'btn_pay
+        '
+        Me.btn_pay.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_pay.FlatAppearance.BorderSize = 0
+        Me.btn_pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_pay.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_pay.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btn_pay.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart
+        Me.btn_pay.IconColor = System.Drawing.Color.White
+        Me.btn_pay.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_pay.Location = New System.Drawing.Point(49, 438)
+        Me.btn_pay.Name = "btn_pay"
+        Me.btn_pay.Padding = New System.Windows.Forms.Padding(5, 0, 20, 0)
+        Me.btn_pay.Size = New System.Drawing.Size(119, 66)
+        Me.btn_pay.TabIndex = 37
+        Me.btn_pay.Text = "PAY"
+        Me.btn_pay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_pay.UseVisualStyleBackColor = True
+        Me.btn_pay.Visible = False
+        '
+        'lbl_payment
+        '
+        Me.lbl_payment.AutoSize = True
+        Me.lbl_payment.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_payment.ForeColor = System.Drawing.Color.Gainsboro
+        Me.lbl_payment.Location = New System.Drawing.Point(3, 318)
+        Me.lbl_payment.Name = "lbl_payment"
+        Me.lbl_payment.Size = New System.Drawing.Size(76, 19)
+        Me.lbl_payment.TabIndex = 39
+        Me.lbl_payment.Text = "Payment"
+        Me.lbl_payment.Visible = False
+        '
+        'txt_payment
+        '
+        Me.txt_payment.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_payment.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.txt_payment.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_payment.ForeColor = System.Drawing.Color.Gainsboro
+        Me.txt_payment.Location = New System.Drawing.Point(3, 340)
+        Me.txt_payment.Name = "txt_payment"
+        Me.txt_payment.Size = New System.Drawing.Size(200, 26)
+        Me.txt_payment.TabIndex = 38
+        Me.txt_payment.Visible = False
         '
         'Form1
         '
@@ -410,7 +874,7 @@ Partial Class Form1
         Me.panelheading.PerformLayout()
         CType(Me.iconcurrentform, System.ComponentModel.ISupportInitialize).EndInit()
         Me.paneldata.ResumeLayout(False)
-        CType(Me.dgv_inventory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_all, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelbottom.ResumeLayout(False)
         Me.paneltexts.ResumeLayout(False)
         Me.paneltexts.PerformLayout()
@@ -427,7 +891,7 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents iconcurrentform As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents paneldata As Panel
-    Friend WithEvents dgv_inventory As DataGridView
+    Friend WithEvents dgv_all As DataGridView
     Friend WithEvents paneltexts As Panel
     Friend WithEvents panellogo As Panel
     Friend WithEvents btnsales As FontAwesome.Sharp.IconButton
@@ -440,4 +904,34 @@ Partial Class Form1
     Friend WithEvents btnsubmit As FontAwesome.Sharp.IconButton
     Friend WithEvents lbltitle As Label
     Friend WithEvents panelbottom As Panel
+    Friend WithEvents lbl_displayed As Label
+    Friend WithEvents lbl_in_stock As Label
+    Friend WithEvents lbl_product_cost As Label
+    Friend WithEvents lbl_product_name As Label
+    Friend WithEvents trans_id_sales As TextBox
+    Friend WithEvents sales_date As TextBox
+    Friend WithEvents total_sales As TextBox
+    Friend WithEvents id_sales As TextBox
+    Friend WithEvents lbl_trans_id As Label
+    Friend WithEvents lbl_sales_date As Label
+    Friend WithEvents lbl_total_sales As Label
+    Friend WithEvents lbl_id As Label
+    Friend WithEvents lbl_product_id As Label
+    Friend WithEvents lbl_log_date As Label
+    Friend WithEvents lbl_log_type As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents product_id_logs As TextBox
+    Friend WithEvents log_date As TextBox
+    Friend WithEvents log_type As TextBox
+    Friend WithEvents log_id As TextBox
+    Friend WithEvents btn_new_trans As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_add_to_cart As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_show_cart As FontAwesome.Sharp.IconButton
+    Friend WithEvents lbl_order_total As Label
+    Friend WithEvents txt_order_total As TextBox
+    Friend WithEvents lbl_quantity As Label
+    Friend WithEvents txt_quantity As TextBox
+    Friend WithEvents lbl_payment As Label
+    Friend WithEvents txt_payment As TextBox
+    Friend WithEvents btn_pay As FontAwesome.Sharp.IconButton
 End Class

@@ -26,7 +26,6 @@ Partial Class Form2
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.btncheckcart = New FontAwesome.Sharp.IconButton()
         Me.btninventory = New FontAwesome.Sharp.IconButton()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.panelcarttext = New System.Windows.Forms.Panel()
         Me.txtboxquantity = New System.Windows.Forms.TextBox()
         Me.btnaddtocart = New FontAwesome.Sharp.IconButton()
@@ -35,9 +34,10 @@ Partial Class Form2
         Me.txtboxpcost2 = New System.Windows.Forms.TextBox()
         Me.txtboxpname2 = New System.Windows.Forms.TextBox()
         Me.txtboxid2 = New System.Windows.Forms.TextBox()
+        Me.dgv_cashier = New System.Windows.Forms.DataGridView()
         Me.panelcartdata.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelcarttext.SuspendLayout()
+        CType(Me.dgv_cashier, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelcartdata
@@ -46,10 +46,10 @@ Partial Class Form2
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelcartdata.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.panelcartdata.Controls.Add(Me.dgv_cashier)
         Me.panelcartdata.Controls.Add(Me.IconButton1)
         Me.panelcartdata.Controls.Add(Me.btncheckcart)
         Me.panelcartdata.Controls.Add(Me.btninventory)
-        Me.panelcartdata.Controls.Add(Me.DataGridView1)
         Me.panelcartdata.Location = New System.Drawing.Point(-1, 0)
         Me.panelcartdata.Name = "panelcartdata"
         Me.panelcartdata.Size = New System.Drawing.Size(575, 496)
@@ -113,18 +113,6 @@ Partial Class Form2
         Me.btninventory.Text = "INVENTORY"
         Me.btninventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btninventory.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 9)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.DataGridView1.Size = New System.Drawing.Size(561, 398)
-        Me.DataGridView1.TabIndex = 0
         '
         'panelcarttext
         '
@@ -250,6 +238,17 @@ Partial Class Form2
         Me.txtboxid2.TabIndex = 0
         Me.txtboxid2.Text = "ID"
         '
+        'dgv_cashier
+        '
+        Me.dgv_cashier.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_cashier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_cashier.Location = New System.Drawing.Point(11, 12)
+        Me.dgv_cashier.Name = "dgv_cashier"
+        Me.dgv_cashier.Size = New System.Drawing.Size(554, 400)
+        Me.dgv_cashier.TabIndex = 12
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -261,9 +260,9 @@ Partial Class Form2
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cashier"
         Me.panelcartdata.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelcarttext.ResumeLayout(False)
         Me.panelcarttext.PerformLayout()
+        CType(Me.dgv_cashier, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -271,7 +270,6 @@ Partial Class Form2
     Friend WithEvents panelcartdata As Panel
     Friend WithEvents btncheckcart As FontAwesome.Sharp.IconButton
     Friend WithEvents btninventory As FontAwesome.Sharp.IconButton
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents panelcarttext As Panel
     Friend WithEvents btnaddtocart As FontAwesome.Sharp.IconButton
     Friend WithEvents txtboxpdisplay2 As TextBox
@@ -281,4 +279,5 @@ Partial Class Form2
     Friend WithEvents txtboxid2 As TextBox
     Friend WithEvents txtboxquantity As TextBox
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents dgv_cashier As DataGridView
 End Class

@@ -8,7 +8,6 @@
         End If
         If borderCol = Nothing Then
             borderCol = ctr.Parent.ForeColor
-
         End If
         ctr.BorderStyle = BorderStyle.None
         ctr.BackColor = bCol
