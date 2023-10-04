@@ -52,6 +52,8 @@ Public Class Form1
     Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
         ActivateButton(sender, RGBColors.color1)
         clear()
+        lbl_lack_payment.Visible = False
+        lbl_quantity_over.Visible = False
         inOrder = False
         btnsubmit.Show()
         lblniID.Visible = True
@@ -81,6 +83,8 @@ Public Class Form1
     Private Sub btnupdate_Click(sender As Object, e As EventArgs) Handles btnupdate.Click
         ActivateButton(sender, RGBColors.color2)
         clear()
+        lbl_lack_payment.Visible = False
+        lbl_quantity_over.Visible = False
         inOrder = False
         btnsubmit.Show()
         lblniID.Visible = False
@@ -110,6 +114,8 @@ Public Class Form1
     Private Sub btnlogs_Click(sender As Object, e As EventArgs) Handles btnlogs.Click
         ActivateButton(sender, RGBColors.color4)
         clear()
+        lbl_lack_payment.Visible = False
+        lbl_quantity_over.Visible = False
         inOrder = False
         lblniID.Visible = False
         lblniDisp.Visible = False
@@ -144,6 +150,8 @@ Public Class Form1
 
     Private Sub btncart_Click(sender As Object, e As EventArgs) Handles btncashier.Click
         clear()
+        lbl_lack_payment.Visible = False
+        lbl_quantity_over.Visible = False
         btnsales.Hide()
         inOrder = False
         lblniID.Visible = False
@@ -185,6 +193,8 @@ Public Class Form1
     Private Sub lbltitle_Click(sender As Object, e As EventArgs) Handles lbltitle.Click
         Inventory_View(1)
         clear()
+        lbl_lack_payment.Visible = False
+        lbl_quantity_over.Visible = False
         inOrder = False
         lblniID.Visible = False
         lblniDisp.Visible = False
@@ -226,6 +236,7 @@ Public Class Form1
 
     Private Sub btninventory_Click(sender As Object, e As EventArgs) Handles btninventory.Click
         Inventory_View(1)
+        lbl_quantity_over.Visible = False
         inOrder = False
         lblniID.Visible = False
         lblniDisp.Visible = False
@@ -245,6 +256,7 @@ Public Class Form1
                 txt_payment.Hide()
                 lbl_quantity.Show()
                 txt_quantity.Show()
+                txt_quantity.ReadOnly = False
                 lbl_order_total.Show()
                 txt_order_total.Show()
                 txt_order_total.Clear()
@@ -313,6 +325,7 @@ Public Class Form1
 
     Private Sub btn_show_cart_Click(sender As Object, e As EventArgs) Handles btn_show_cart.Click
         lblniID.Visible = False
+        lbl_quantity_over.Visible = False
         lblniDisp.Visible = False
         lblnuID.Visible = False
         Orders_View(trans_id)
@@ -327,30 +340,41 @@ Public Class Form1
         lbl_order_total.Show()
         txt_order_total.Show()
         btn_add_to_cart.Hide()
+        txt_payment.ReadOnly = False
         clear()
     End Sub
 
     Private Sub btn_add_to_cart_Click(sender As Object, e As EventArgs) Handles btn_add_to_cart.Click
-        add_order_query(txtboxid.Text, trans_id, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text, txt_quantity.Text)
+        Dim check As Boolean = add_order_query(txtboxid.Text, trans_id, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text, txt_quantity.Text)
+        If (Not check) Then
+            lbl_quantity_over.Visible = True
+        Else
+            lbl_quantity_over.Visible = False
+        End If
         clear()
         txt_order_total.Text = order_total_query(trans_id)
     End Sub
 
     Private Sub btn_pay_Click(sender As Object, e As EventArgs) Handles btn_pay.Click
-        commit_order(trans_id, txt_order_total.Text, txt_payment.Text)
+        Dim check As Boolean = commit_order(trans_id, txt_order_total.Text, txt_payment.Text)
         clear()
-        txt_order_total.Clear()
-        trans_id = 0
-        btninventory.Hide()
-        btn_show_cart.Hide()
-        btn_new_trans.Show()
-        btn_pay.Hide()
-        lbl_payment.Hide()
-        txt_payment.Hide()
-        lbl_quantity.Show()
-        txt_quantity.Show()
-        in_transaction = False
-        inOrder = False
+        If (check) Then
+            lbl_lack_payment.Visible = False
+            txt_order_total.Clear()
+            trans_id = 0
+            btninventory.Hide()
+            btn_show_cart.Hide()
+            btn_new_trans.Show()
+            btn_pay.Hide()
+            lbl_payment.Hide()
+            txt_payment.Hide()
+            lbl_quantity.Show()
+            txt_quantity.Show()
+            in_transaction = False
+            inOrder = False
+        Else
+            lbl_lack_payment.Visible = True
+        End If
     End Sub
 
     Private Sub dgv_all_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_all.CellDoubleClick
