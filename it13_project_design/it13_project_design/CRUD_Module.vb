@@ -8,7 +8,7 @@ Module CRUD_Module
 
     Public Sub Inventory_View(ByVal num As Integer)
         show_elements(num)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         cmd = conn.CreateCommand
         cmd.CommandText = "select * from inventory;"
@@ -20,7 +20,7 @@ Module CRUD_Module
     End Sub
     Public Sub Orders_View(ByVal trans_id As Integer)
         show_elements(1)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         cmd = conn.CreateCommand
         cmd.CommandText = "select * from orders where trans_id = '" & trans_id & "';"
@@ -31,7 +31,7 @@ Module CRUD_Module
         conn.Close()
     End Sub
     Public Function order_total_query(ByVal trans_id As Integer)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         Dim orderTotal As SQLiteCommand
         orderTotal = conn.CreateCommand
@@ -51,7 +51,7 @@ Module CRUD_Module
 
     Public Sub Sales_View()
         show_elements(2)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         cmd = conn.CreateCommand
         cmd.CommandText = "select * from sales;"
@@ -63,7 +63,7 @@ Module CRUD_Module
     End Sub
     Public Sub Logs_View()
         show_elements(3)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         cmd = conn.CreateCommand
         cmd.CommandText = "select log_id, log_type, log_date, product_id from logs;"
@@ -86,7 +86,7 @@ Module CRUD_Module
         End If
         Dim price = Double.Parse(product_price)
         Dim stock = Int(in_stock)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         cmd = conn.CreateCommand
         Dim refresh As SQLiteCommand
@@ -116,7 +116,7 @@ Module CRUD_Module
         Dim checkstock As Integer
         Dim newstock As Integer
         Dim updateInv As SQLiteCommand
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         cmd = conn.CreateCommand
         If (disp > quan) Then
@@ -147,7 +147,7 @@ Module CRUD_Module
         conn.Close()
     End Sub
     Public Sub commit_order(ByVal trans_id As Integer, order_total As String, payment As String)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         Dim t_id = Int(trans_id)
         Dim pay = Double.Parse(payment)
@@ -167,7 +167,7 @@ Module CRUD_Module
         conn.Close()
     End Sub
     Public Function add_trans_query()
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         cmd = conn.CreateCommand
         cmd.CommandText = "insert into transactions(trans_id, trans_amount, trans_date, trans_change) values(NULL, 0, '" & Date.Now & "', 0);"
@@ -191,7 +191,7 @@ Module CRUD_Module
         Return currTrans
     End Function
     Public Sub delete_order(ByVal trans_id As Integer, product_id As Integer, quantity As Integer)
-        conn.ConnectionString = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Integrated Security=true"
+        conn.ConnectionString = "Data Source=C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
         conn.Open()
         Dim quantityCheck As SQLiteCommand
         quantityCheck = conn.CreateCommand

@@ -38,3 +38,28 @@ C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\bin
 C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.xml
 C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.SqlServer.xml
 C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.xml
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\x86\sqlite3.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\x64\sqlite3.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.exe.config
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.exe
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.pdb
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.xml
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.xml
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.xml
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.AssemblyReference.cache
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Form1.resources
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Form2.resources
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Resources.resources
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.GenerateResource.cache
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.CoreCompileInputs.cache
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.CopyComplete
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.exe
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.xml
+C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.pdb

@@ -54,6 +54,16 @@ Public Class Form1
         clear()
         inOrder = False
         btnsubmit.Show()
+        lblniID.Visible = True
+        lblniDisp.Visible = True
+        lblnuID.Visible = False
+        lblRO1.Visible = False
+        lblRO2.Visible = False
+        lblRO3.Visible = False
+        lblRO4.Visible = False
+        lblRO5.Visible = False
+        lblRO6.Visible = False
+        lblRO7.Visible = False
         btn_add_to_cart.Hide()
         btn_show_cart.Hide()
         txt_quantity.Hide()
@@ -73,6 +83,16 @@ Public Class Form1
         clear()
         inOrder = False
         btnsubmit.Show()
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = True
+        lblRO1.Visible = False
+        lblRO2.Visible = False
+        lblRO3.Visible = False
+        lblRO4.Visible = False
+        lblRO5.Visible = False
+        lblRO6.Visible = False
+        lblRO7.Visible = False
         btn_add_to_cart.Hide()
         btn_show_cart.Hide()
         txt_quantity.Hide()
@@ -91,6 +111,16 @@ Public Class Form1
         ActivateButton(sender, RGBColors.color4)
         clear()
         inOrder = False
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
+        lblRO1.Visible = True
+        lblRO2.Visible = True
+        lblRO3.Visible = True
+        lblRO4.Visible = True
+        lblRO5.Visible = False
+        lblRO6.Visible = False
+        lblRO7.Visible = False
         btnsubmit.Hide()
         btn_add_to_cart.Hide()
         btn_show_cart.Hide()
@@ -116,6 +146,16 @@ Public Class Form1
         clear()
         btnsales.Hide()
         inOrder = False
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
+        lblRO1.Visible = True
+        lblRO2.Visible = True
+        lblRO3.Visible = True
+        lblRO4.Visible = True
+        lblRO5.Visible = True
+        lblRO6.Visible = False
+        lblRO7.Visible = True
         operation = 3
         currpage = 1
         lbl_order_total.Show()
@@ -146,6 +186,16 @@ Public Class Form1
         Inventory_View(1)
         clear()
         inOrder = False
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
+        lblRO1.Visible = True
+        lblRO2.Visible = True
+        lblRO3.Visible = True
+        lblRO4.Visible = True
+        lblRO5.Visible = True
+        lblRO6.Visible = False
+        lblRO7.Visible = False
         panelbottom.Show()
         btn_pay.Hide()
         btn_new_trans.Hide()
@@ -159,6 +209,16 @@ Public Class Form1
     End Sub
 
     Private Sub btnsales_Click(sender As Object, e As EventArgs) Handles btnsales.Click
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
+        lblRO1.Visible = True
+        lblRO2.Visible = True
+        lblRO3.Visible = True
+        lblRO4.Visible = True
+        lblRO5.Visible = False
+        lblRO6.Visible = False
+        lblRO7.Visible = False
         Sales_View()
         clear()
         currpage = 2
@@ -167,6 +227,16 @@ Public Class Form1
     Private Sub btninventory_Click(sender As Object, e As EventArgs) Handles btninventory.Click
         Inventory_View(1)
         inOrder = False
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
+        lblRO1.Visible = True
+        lblRO2.Visible = True
+        lblRO3.Visible = True
+        lblRO4.Visible = True
+        lblRO5.Visible = True
+        lblRO6.Visible = False
+        lblRO7.Visible = False
         If (in_transaction) Then
             btn_pay.Hide()
             If (where = "cashier") Then
@@ -178,6 +248,7 @@ Public Class Form1
                 lbl_order_total.Show()
                 txt_order_total.Show()
                 txt_order_total.Clear()
+                lblRO7.Visible = True
             End If
         End If
         clear()
@@ -185,8 +256,13 @@ Public Class Form1
     End Sub
 
     Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
-        add_update_query(operation, txtboxid.Text, txtboxpname.Text, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text)
-        clear()
+        If txtboxpname.Text = "" Or txtboxpcost.Text = "" Or txtboxpinstock.Text = "" Then
+            MsgBox("Please input values into the correct fields!", MsgBoxStyle.Critical, "ERROR")
+
+        Else
+            add_update_query(operation, txtboxid.Text, txtboxpname.Text, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text)
+            clear()
+        End If
     End Sub
 
     Private Sub dgv_all_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_all.CellClick
@@ -217,6 +293,9 @@ Public Class Form1
     End Sub
 
     Private Sub btn_new_trans_Click(sender As Object, e As EventArgs) Handles btn_new_trans.Click
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
         btninventory.Show()
         btnsubmit.Hide()
         btn_new_trans.Hide()
@@ -233,6 +312,9 @@ Public Class Form1
     End Sub
 
     Private Sub btn_show_cart_Click(sender As Object, e As EventArgs) Handles btn_show_cart.Click
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
         Orders_View(trans_id)
         txt_order_total.Text = order_total_query(trans_id)
         currpage = 4
@@ -288,4 +370,52 @@ Public Class Form1
             End If
         End If
     End Sub
+
+    Private Sub txtboxpname_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtboxpname.KeyPress
+        If AscW(e.KeyChar) > 64 And AscW(e.KeyChar) < 91 Or AscW(e.KeyChar) > 96 And AscW(e.KeyChar) < 123 Or AscW(e.KeyChar) = 8 Then
+        Else
+            e.KeyChar = Nothing
+        End If
+    End Sub
+
+    Private Sub txtboxpcost_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtboxpcost.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub txtboxpinstock_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtboxpinstock.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub txtboxpdisplay_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtboxpdisplay.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub txt_quantity_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_quantity.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub txt_payment_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_payment.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
 End Class
