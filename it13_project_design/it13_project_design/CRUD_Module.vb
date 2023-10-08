@@ -5,7 +5,7 @@ Module CRUD_Module
     Dim conn As New SQLiteConnection
     Dim cmd As SQLiteCommand
     Private SQLreader As DbDataReader
-    Dim connString As String = "Data Source=C:\projects\vs_projects\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
+    Dim connString As String = "Data Source=D:\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
 
     Public Sub Inventory_View(ByVal num As Integer)
         show_elements(num)

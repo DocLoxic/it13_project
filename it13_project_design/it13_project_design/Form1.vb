@@ -37,6 +37,22 @@ Public Class Form1
 
         End If
     End Sub
+    Private Sub CashierButton(senderbtn As Object, customcolor As Color)
+        If senderbtn IsNot Nothing Then
+            DisableButton()
+
+            currentbtn = CType(senderbtn, IconButton)
+            currentbtn.BackColor = Color.FromArgb(37, 36, 81)
+            currentbtn.ForeColor = customcolor
+            currentbtn.IconColor = customcolor
+            currentbtn.TextAlign = ContentAlignment.MiddleCenter
+            currentbtn.ImageAlign = ContentAlignment.MiddleRight
+            iconcurrentform.IconChar = currentbtn.IconChar
+            iconcurrentform.IconColor = customcolor
+
+
+        End If
+    End Sub
     Private Sub DisableButton()
         If currentbtn IsNot Nothing Then
             currentbtn.BackColor = Color.FromArgb(30, 31, 68)
@@ -149,6 +165,7 @@ Public Class Form1
     End Sub
 
     Private Sub btncart_Click(sender As Object, e As EventArgs) Handles btncashier.Click
+        CashierButton(sender, Color.Gainsboro)
         clear()
         lbl_lack_payment.Visible = False
         lbl_quantity_over.Visible = False
@@ -190,7 +207,7 @@ Public Class Form1
         where = "cashier"
     End Sub
 
-    Private Sub lbltitle_Click(sender As Object, e As EventArgs) Handles lbltitle.Click
+    Private Sub lbltitle_Click(sender As Object, e As EventArgs)
         Inventory_View(1)
         clear()
         lbl_lack_payment.Visible = False
@@ -442,4 +459,32 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub btnhome_Click(sender As Object, e As EventArgs) Handles btnhome.Click
+        ActivateButton(sender, Color.Gainsboro)
+        Inventory_View(1)
+        clear()
+        lbl_lack_payment.Visible = False
+        lbl_quantity_over.Visible = False
+        inOrder = False
+        lblniID.Visible = False
+        lblniDisp.Visible = False
+        lblnuID.Visible = False
+        lblRO1.Visible = True
+        lblRO2.Visible = True
+        lblRO3.Visible = True
+        lblRO4.Visible = True
+        lblRO5.Visible = True
+        lblRO6.Visible = False
+        lblRO7.Visible = False
+        panelbottom.Show()
+        btn_pay.Hide()
+        btn_new_trans.Hide()
+        btn_show_cart.Hide()
+        btninventory.Show()
+        btn_add_to_cart.Hide()
+        btnsales.Show()
+        txtbox_readonly_true()
+        btnsubmit.Hide()
+        where = "home"
+    End Sub
 End Class

@@ -63,3 +63,28 @@ C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_
 C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.exe
 C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.xml
 C:\Users\reons\OneDrive\Desktop\Files\Saves\GIT Projects\IT13\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.pdb
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\x86\sqlite3.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\x64\sqlite3.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.exe.config
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.exe
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.pdb
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\it13_project_design.xml
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.SqlServer.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\FontAwesome.Sharp.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.EF6.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.Linq.dll
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.xml
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\EntityFramework.SqlServer.xml
+D:\it13_project\it13_project_design\it13_project_design\bin\Debug\System.Data.SQLite.xml
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.AssemblyReference.cache
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Form1.resources
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Form2.resources
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.Resources.resources
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.GenerateResource.cache
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.CoreCompileInputs.cache
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.vbproj.CopyComplete
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.exe
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.xml
+D:\it13_project\it13_project_design\it13_project_design\obj\Debug\it13_project_design.pdb

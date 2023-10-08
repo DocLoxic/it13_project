@@ -24,12 +24,12 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.panelmenu = New System.Windows.Forms.Panel()
         Me.panellogo = New System.Windows.Forms.Panel()
-        Me.lbltitle = New System.Windows.Forms.Label()
         Me.btncashier = New FontAwesome.Sharp.IconButton()
         Me.btnlogs = New FontAwesome.Sharp.IconButton()
         Me.btnupdate = New FontAwesome.Sharp.IconButton()
         Me.btnadd = New FontAwesome.Sharp.IconButton()
         Me.panelheading = New System.Windows.Forms.Panel()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.lblTopmain = New System.Windows.Forms.Label()
         Me.iconcurrentform = New FontAwesome.Sharp.IconPictureBox()
         Me.paneldata = New System.Windows.Forms.Panel()
@@ -40,6 +40,8 @@ Partial Class Form1
         Me.btnsales = New FontAwesome.Sharp.IconButton()
         Me.btninventory = New FontAwesome.Sharp.IconButton()
         Me.paneltexts = New System.Windows.Forms.Panel()
+        Me.lbl_lack_payment = New System.Windows.Forms.Label()
+        Me.lbl_quantity_over = New System.Windows.Forms.Label()
         Me.lblRO7 = New System.Windows.Forms.Label()
         Me.lblRO6 = New System.Windows.Forms.Label()
         Me.lblRO5 = New System.Windows.Forms.Label()
@@ -85,8 +87,7 @@ Partial Class Form1
         Me.txtboxpcost = New System.Windows.Forms.TextBox()
         Me.txtboxpname = New System.Windows.Forms.TextBox()
         Me.txtboxid = New System.Windows.Forms.TextBox()
-        Me.lbl_quantity_over = New System.Windows.Forms.Label()
-        Me.lbl_lack_payment = New System.Windows.Forms.Label()
+        Me.btnhome = New FontAwesome.Sharp.IconButton()
         Me.panelmenu.SuspendLayout()
         Me.panellogo.SuspendLayout()
         Me.panelheading.SuspendLayout()
@@ -115,22 +116,11 @@ Partial Class Form1
         '
         'panellogo
         '
-        Me.panellogo.Controls.Add(Me.lbltitle)
+        Me.panellogo.Controls.Add(Me.btnhome)
         Me.panellogo.Location = New System.Drawing.Point(0, 0)
         Me.panellogo.Name = "panellogo"
         Me.panellogo.Size = New System.Drawing.Size(177, 91)
         Me.panellogo.TabIndex = 5
-        '
-        'lbltitle
-        '
-        Me.lbltitle.AutoSize = True
-        Me.lbltitle.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitle.ForeColor = System.Drawing.Color.Gainsboro
-        Me.lbltitle.Location = New System.Drawing.Point(47, 30)
-        Me.lbltitle.Name = "lbltitle"
-        Me.lbltitle.Size = New System.Drawing.Size(85, 29)
-        Me.lbltitle.TabIndex = 0
-        Me.lbltitle.Text = "HOME"
         '
         'btncashier
         '
@@ -144,10 +134,12 @@ Partial Class Form1
         Me.btncashier.IconChar = FontAwesome.Sharp.IconChar.CashRegister
         Me.btncashier.IconColor = System.Drawing.Color.Gainsboro
         Me.btncashier.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btncashier.IconSize = 35
         Me.btncashier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btncashier.Location = New System.Drawing.Point(0, 437)
+        Me.btncashier.MinimumSize = New System.Drawing.Size(10, 10)
         Me.btncashier.Name = "btncashier"
-        Me.btncashier.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btncashier.Padding = New System.Windows.Forms.Padding(15, 0, 20, 0)
         Me.btncashier.Size = New System.Drawing.Size(177, 66)
         Me.btncashier.TabIndex = 8
         Me.btncashier.Text = "CASHIER"
@@ -217,12 +209,25 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelheading.BackColor = System.Drawing.Color.SlateBlue
+        Me.panelheading.Controls.Add(Me.IconButton1)
         Me.panelheading.Controls.Add(Me.lblTopmain)
         Me.panelheading.Controls.Add(Me.iconcurrentform)
         Me.panelheading.Location = New System.Drawing.Point(177, 0)
         Me.panelheading.Name = "panelheading"
         Me.panelheading.Size = New System.Drawing.Size(544, 59)
         Me.panelheading.TabIndex = 2
+        '
+        'IconButton1
+        '
+        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.None
+        Me.IconButton1.IconColor = System.Drawing.Color.Black
+        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton1.Location = New System.Drawing.Point(291, 33)
+        Me.IconButton1.Name = "IconButton1"
+        Me.IconButton1.Size = New System.Drawing.Size(75, 23)
+        Me.IconButton1.TabIndex = 2
+        Me.IconButton1.Text = "IconButton1"
+        Me.IconButton1.UseVisualStyleBackColor = True
         '
         'lblTopmain
         '
@@ -423,6 +428,30 @@ Partial Class Form1
         Me.paneltexts.Name = "paneltexts"
         Me.paneltexts.Size = New System.Drawing.Size(206, 515)
         Me.paneltexts.TabIndex = 4
+        '
+        'lbl_lack_payment
+        '
+        Me.lbl_lack_payment.AutoSize = True
+        Me.lbl_lack_payment.ForeColor = System.Drawing.Color.Red
+        Me.lbl_lack_payment.Location = New System.Drawing.Point(94, 322)
+        Me.lbl_lack_payment.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_lack_payment.Name = "lbl_lack_payment"
+        Me.lbl_lack_payment.Size = New System.Drawing.Size(91, 13)
+        Me.lbl_lack_payment.TabIndex = 52
+        Me.lbl_lack_payment.Text = "Lacking payment!"
+        Me.lbl_lack_payment.Visible = False
+        '
+        'lbl_quantity_over
+        '
+        Me.lbl_quantity_over.AutoSize = True
+        Me.lbl_quantity_over.ForeColor = System.Drawing.Color.Red
+        Me.lbl_quantity_over.Location = New System.Drawing.Point(94, 322)
+        Me.lbl_quantity_over.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_quantity_over.Name = "lbl_quantity_over"
+        Me.lbl_quantity_over.Size = New System.Drawing.Size(95, 13)
+        Me.lbl_quantity_over.TabIndex = 51
+        Me.lbl_quantity_over.Text = "Not enough stock!"
+        Me.lbl_quantity_over.Visible = False
         '
         'lblRO7
         '
@@ -1013,29 +1042,24 @@ Partial Class Form1
         Me.txtboxid.Size = New System.Drawing.Size(200, 26)
         Me.txtboxid.TabIndex = 0
         '
-        'lbl_quantity_over
+        'btnhome
         '
-        Me.lbl_quantity_over.AutoSize = True
-        Me.lbl_quantity_over.ForeColor = System.Drawing.Color.Red
-        Me.lbl_quantity_over.Location = New System.Drawing.Point(94, 322)
-        Me.lbl_quantity_over.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_quantity_over.Name = "lbl_quantity_over"
-        Me.lbl_quantity_over.Size = New System.Drawing.Size(95, 13)
-        Me.lbl_quantity_over.TabIndex = 51
-        Me.lbl_quantity_over.Text = "Not enough stock!"
-        Me.lbl_quantity_over.Visible = False
-        '
-        'lbl_lack_payment
-        '
-        Me.lbl_lack_payment.AutoSize = True
-        Me.lbl_lack_payment.ForeColor = System.Drawing.Color.Red
-        Me.lbl_lack_payment.Location = New System.Drawing.Point(94, 322)
-        Me.lbl_lack_payment.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_lack_payment.Name = "lbl_lack_payment"
-        Me.lbl_lack_payment.Size = New System.Drawing.Size(91, 13)
-        Me.lbl_lack_payment.TabIndex = 52
-        Me.lbl_lack_payment.Text = "Lacking payment!"
-        Me.lbl_lack_payment.Visible = False
+        Me.btnhome.FlatAppearance.BorderSize = 0
+        Me.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnhome.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnhome.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnhome.IconChar = FontAwesome.Sharp.IconChar.HomeLg
+        Me.btnhome.IconColor = System.Drawing.Color.White
+        Me.btnhome.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnhome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnhome.Location = New System.Drawing.Point(3, 14)
+        Me.btnhome.Name = "btnhome"
+        Me.btnhome.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btnhome.Size = New System.Drawing.Size(177, 66)
+        Me.btnhome.TabIndex = 5
+        Me.btnhome.Text = "HOME"
+        Me.btnhome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnhome.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1052,7 +1076,6 @@ Partial Class Form1
         Me.Text = "Aling NIta's Sari-Sari Store"
         Me.panelmenu.ResumeLayout(False)
         Me.panellogo.ResumeLayout(False)
-        Me.panellogo.PerformLayout()
         Me.panelheading.ResumeLayout(False)
         Me.panelheading.PerformLayout()
         CType(Me.iconcurrentform, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1085,7 +1108,6 @@ Partial Class Form1
     Friend WithEvents txtboxpcost As TextBox
     Friend WithEvents txtboxpname As TextBox
     Friend WithEvents btnsubmit As FontAwesome.Sharp.IconButton
-    Friend WithEvents lbltitle As Label
     Friend WithEvents panelbottom As Panel
     Friend WithEvents lbl_displayed As Label
     Friend WithEvents lbl_in_stock As Label
@@ -1130,4 +1152,6 @@ Partial Class Form1
     Friend WithEvents lblRO2 As Label
     Friend WithEvents lbl_lack_payment As Label
     Friend WithEvents lbl_quantity_over As Label
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnhome As FontAwesome.Sharp.IconButton
 End Class
