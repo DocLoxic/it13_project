@@ -162,6 +162,7 @@ Public Class Form1
         btnsubmit.Hide()
         btn_new_trans.Hide()
         Inventory_View(1)
+        Console.WriteLine(Application.StartupPath)
     End Sub
 
     Private Sub btncart_Click(sender As Object, e As EventArgs) Handles btncashier.Click
@@ -362,35 +363,43 @@ Public Class Form1
     End Sub
 
     Private Sub btn_add_to_cart_Click(sender As Object, e As EventArgs) Handles btn_add_to_cart.Click
-        Dim check As Boolean = add_order_query(txtboxid.Text, trans_id, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text, txt_quantity.Text)
-        If (Not check) Then
-            lbl_quantity_over.Visible = True
+        If txtboxid.Text = "" Or txtboxpcost.Text = "" Or txtboxpinstock.Text = "" Or txtboxpdisplay.Text = "" Or txt_quantity.Text = "" Then
+            MsgBox("Please input values into the correct fields!", MsgBoxStyle.Critical, "ERROR")
         Else
-            lbl_quantity_over.Visible = False
+            Dim check As Boolean = add_order_query(txtboxid.Text, trans_id, txtboxpcost.Text, txtboxpinstock.Text, txtboxpdisplay.Text, txt_quantity.Text)
+            If (Not check) Then
+                lbl_quantity_over.Visible = True
+            Else
+                lbl_quantity_over.Visible = False
+            End If
+            clear()
+            txt_order_total.Text = order_total_query(trans_id)
         End If
-        clear()
-        txt_order_total.Text = order_total_query(trans_id)
     End Sub
 
     Private Sub btn_pay_Click(sender As Object, e As EventArgs) Handles btn_pay.Click
-        Dim check As Boolean = commit_order(trans_id, txt_order_total.Text, txt_payment.Text)
-        clear()
-        If (check) Then
-            lbl_lack_payment.Visible = False
-            txt_order_total.Clear()
-            trans_id = 0
-            btninventory.Hide()
-            btn_show_cart.Hide()
-            btn_new_trans.Show()
-            btn_pay.Hide()
-            lbl_payment.Hide()
-            txt_payment.Hide()
-            lbl_quantity.Show()
-            txt_quantity.Show()
-            in_transaction = False
-            inOrder = False
+        If txtboxid.Text = "" Or txtboxpcost.Text = "" Or txtboxpinstock.Text = "" Or txtboxpdisplay.Text = "" Or txt_payment.Text = "" Then
+            MsgBox("Please input values into the correct fields!", MsgBoxStyle.Critical, "ERROR")
         Else
-            lbl_lack_payment.Visible = True
+            Dim check As Boolean = commit_order(trans_id, txt_order_total.Text, txt_payment.Text)
+            clear()
+            If (check) Then
+                lbl_lack_payment.Visible = False
+                txt_order_total.Clear()
+                trans_id = 0
+                btninventory.Hide()
+                btn_show_cart.Hide()
+                btn_new_trans.Show()
+                btn_pay.Hide()
+                lbl_payment.Hide()
+                txt_payment.Hide()
+                lbl_quantity.Show()
+                txt_quantity.Show()
+                in_transaction = False
+                inOrder = False
+            Else
+                lbl_lack_payment.Visible = True
+            End If
         End If
     End Sub
 

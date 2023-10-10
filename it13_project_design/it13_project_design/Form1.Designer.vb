@@ -24,12 +24,12 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.panelmenu = New System.Windows.Forms.Panel()
         Me.panellogo = New System.Windows.Forms.Panel()
+        Me.btnhome = New FontAwesome.Sharp.IconButton()
         Me.btncashier = New FontAwesome.Sharp.IconButton()
         Me.btnlogs = New FontAwesome.Sharp.IconButton()
         Me.btnupdate = New FontAwesome.Sharp.IconButton()
         Me.btnadd = New FontAwesome.Sharp.IconButton()
         Me.panelheading = New System.Windows.Forms.Panel()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.lblTopmain = New System.Windows.Forms.Label()
         Me.iconcurrentform = New FontAwesome.Sharp.IconPictureBox()
         Me.paneldata = New System.Windows.Forms.Panel()
@@ -87,7 +87,6 @@ Partial Class Form1
         Me.txtboxpcost = New System.Windows.Forms.TextBox()
         Me.txtboxpname = New System.Windows.Forms.TextBox()
         Me.txtboxid = New System.Windows.Forms.TextBox()
-        Me.btnhome = New FontAwesome.Sharp.IconButton()
         Me.panelmenu.SuspendLayout()
         Me.panellogo.SuspendLayout()
         Me.panelheading.SuspendLayout()
@@ -121,6 +120,25 @@ Partial Class Form1
         Me.panellogo.Name = "panellogo"
         Me.panellogo.Size = New System.Drawing.Size(177, 91)
         Me.panellogo.TabIndex = 5
+        '
+        'btnhome
+        '
+        Me.btnhome.FlatAppearance.BorderSize = 0
+        Me.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnhome.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnhome.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnhome.IconChar = FontAwesome.Sharp.IconChar.HomeLg
+        Me.btnhome.IconColor = System.Drawing.Color.White
+        Me.btnhome.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btnhome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnhome.Location = New System.Drawing.Point(3, 14)
+        Me.btnhome.Name = "btnhome"
+        Me.btnhome.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btnhome.Size = New System.Drawing.Size(177, 66)
+        Me.btnhome.TabIndex = 5
+        Me.btnhome.Text = "HOME"
+        Me.btnhome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnhome.UseVisualStyleBackColor = True
         '
         'btncashier
         '
@@ -209,25 +227,12 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelheading.BackColor = System.Drawing.Color.SlateBlue
-        Me.panelheading.Controls.Add(Me.IconButton1)
         Me.panelheading.Controls.Add(Me.lblTopmain)
         Me.panelheading.Controls.Add(Me.iconcurrentform)
         Me.panelheading.Location = New System.Drawing.Point(177, 0)
         Me.panelheading.Name = "panelheading"
         Me.panelheading.Size = New System.Drawing.Size(544, 59)
         Me.panelheading.TabIndex = 2
-        '
-        'IconButton1
-        '
-        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButton1.IconColor = System.Drawing.Color.Black
-        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton1.Location = New System.Drawing.Point(291, 33)
-        Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Size = New System.Drawing.Size(75, 23)
-        Me.IconButton1.TabIndex = 2
-        Me.IconButton1.Text = "IconButton1"
-        Me.IconButton1.UseVisualStyleBackColor = True
         '
         'lblTopmain
         '
@@ -1042,25 +1047,6 @@ Partial Class Form1
         Me.txtboxid.Size = New System.Drawing.Size(200, 26)
         Me.txtboxid.TabIndex = 0
         '
-        'btnhome
-        '
-        Me.btnhome.FlatAppearance.BorderSize = 0
-        Me.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnhome.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnhome.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnhome.IconChar = FontAwesome.Sharp.IconChar.HomeLg
-        Me.btnhome.IconColor = System.Drawing.Color.White
-        Me.btnhome.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btnhome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnhome.Location = New System.Drawing.Point(3, 14)
-        Me.btnhome.Name = "btnhome"
-        Me.btnhome.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btnhome.Size = New System.Drawing.Size(177, 66)
-        Me.btnhome.TabIndex = 5
-        Me.btnhome.Text = "HOME"
-        Me.btnhome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnhome.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1152,6 +1138,5 @@ Partial Class Form1
     Friend WithEvents lblRO2 As Label
     Friend WithEvents lbl_lack_payment As Label
     Friend WithEvents lbl_quantity_over As Label
-    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents btnhome As FontAwesome.Sharp.IconButton
 End Class

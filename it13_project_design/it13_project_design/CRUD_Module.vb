@@ -5,7 +5,7 @@ Module CRUD_Module
     Dim conn As New SQLiteConnection
     Dim cmd As SQLiteCommand
     Private SQLreader As DbDataReader
-    Dim connString As String = "Data Source=D:\it13_project\it13_project_design\it13_project_design\Resources\it13_db.db; Intergrated Security=true"
+    Dim connString As String = "Data Source= " & Application.StartupPath & "\it13_db.db; Intergrated Security=true"
 
     Public Sub Inventory_View(ByVal num As Integer)
         show_elements(num)
@@ -113,33 +113,38 @@ Module CRUD_Module
         Dim stock = Int(in_stock)
         Dim disp = Int(displayed)
         Dim quan = Int(quantity)
-        Dim newdisp As Integer
-        Dim checkstock As Integer
-        Dim newstock As Integer
-        Dim updateInv As SQLiteCommand
         Dim check As Boolean
-        conn.ConnectionString = connString
-        conn.Open()
-        cmd = conn.CreateCommand
-        If (disp > quan) Then
-            newdisp = displayed - quan
-            updateInv = conn.CreateCommand
-            cmd.CommandText = "insert into orders(product_id, trans_id, total_cost, order_quantity) values('" & p_id & "', '" & t_id & "', '" & price * quan & "', '" & quan & "');"
-            cmd.ExecuteNonQuery()
-            updateInv.CommandText = "update inventory set displayed = '" & newdisp & "' where product_id = '" & p_id & "';"
-            updateInv.ExecuteNonQuery()
-        ElseIf (disp < quantity) Then
-            checkstock = Math.Abs(disp - quan)
-            If (checkstock < stock) Then
-                newstock = stock - checkstock
+        If quan <= 0 Then
+            MsgBox("Please input quantity!", MsgBoxStyle.Critical, "ERROR")
+            check = False
+        Else
+            Dim newdisp As Integer
+            Dim checkstock As Integer
+            Dim newstock As Integer
+            Dim updateInv As SQLiteCommand
+            conn.ConnectionString = connString
+            conn.Open()
+            cmd = conn.CreateCommand
+            If (disp > quan) Then
+                newdisp = displayed - quan
                 updateInv = conn.CreateCommand
                 cmd.CommandText = "insert into orders(product_id, trans_id, total_cost, order_quantity) values('" & p_id & "', '" & t_id & "', '" & price * quan & "', '" & quan & "');"
                 cmd.ExecuteNonQuery()
-                updateInv.CommandText = "update inventory set in_stock = '" & newstock & "', displayed = '" & newdisp & "' where product_id = '" & p_id & "';"
+                updateInv.CommandText = "update inventory set displayed = '" & newdisp & "' where product_id = '" & p_id & "';"
                 updateInv.ExecuteNonQuery()
-                check = True
-            Else
-                check = False
+            ElseIf (disp < quantity) Then
+                checkstock = Math.Abs(disp - quan)
+                If (checkstock < stock) Then
+                    newstock = stock - checkstock
+                    updateInv = conn.CreateCommand
+                    cmd.CommandText = "insert into orders(product_id, trans_id, total_cost, order_quantity) values('" & p_id & "', '" & t_id & "', '" & price * quan & "', '" & quan & "');"
+                    cmd.ExecuteNonQuery()
+                    updateInv.CommandText = "update inventory set in_stock = '" & newstock & "', displayed = '" & newdisp & "' where product_id = '" & p_id & "';"
+                    updateInv.ExecuteNonQuery()
+                    check = True
+                Else
+                    check = False
+                End If
             End If
         End If
         Dim refresh As SQLiteCommand
@@ -158,16 +163,21 @@ Module CRUD_Module
         Dim check As Boolean
         Dim t_id = Int(trans_id)
         Dim pay = Double.Parse(payment)
-        Dim price = order_total
-        Dim change As Double = (pay - price)
-        If (change < 0) Then
+        If (pay <= 0) Then
+            MsgBox("Please input payment!", MsgBoxStyle.Critical, "ERROR")
             check = False
         Else
-            Dim updateTrans As SQLiteCommand
-            updateTrans = conn.CreateCommand
-            updateTrans.CommandText = "update transactions set trans_amount = '" & pay & "', trans_change = '" & change & "' where trans_id = '" & t_id & "';"
-            updateTrans.ExecuteNonQuery()
-            check = True
+            Dim price = order_total
+            Dim change As Double = (pay - price)
+            If (change < 0) Then
+                check = False
+            Else
+                Dim updateTrans As SQLiteCommand
+                updateTrans = conn.CreateCommand
+                updateTrans.CommandText = "update transactions set trans_amount = '" & pay & "', trans_change = '" & change & "' where trans_id = '" & t_id & "';"
+                updateTrans.ExecuteNonQuery()
+                check = True
+            End If
         End If
         Dim refresh As SQLiteCommand
         refresh = conn.CreateCommand
